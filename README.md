@@ -1,7 +1,5 @@
 # Bài tập java
 
-<img src="https://yu.ctu.edu.vn/images/upload/article/2020/03/0305-logo-ctu.png"/>
-
 ## Hello world
 <a href="https://github.com/thangved/java-learn/blob/main/
 src/HelloWorld.java">
