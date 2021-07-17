@@ -18,7 +18,7 @@ public class Point {
         setY(MyUtil.scanner.nextInt());
     }
     public void print(){
-        System.out.format("(%d, %d)\n", getX(), getY());
+        System.out.format("(%d, %d)", getX(), getY());
     }
 
     public void move(int x, int y){
@@ -44,6 +44,11 @@ public class Point {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public void setXY(int x, int y){
+        setX(x);
+        setY(y);
     }
 
     public int getX() {
