@@ -1,3 +1,5 @@
+package elsectu;
+
 public class Sum {
     public static void main(String[] args) {
         int a = MyUtil.scanner.nextInt(),

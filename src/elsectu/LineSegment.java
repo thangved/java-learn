@@ -1,3 +1,5 @@
+package elsectu;
+
 public class LineSegment {
     private Point d1, d2;
 

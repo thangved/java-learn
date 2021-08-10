@@ -1,3 +1,5 @@
+package elsectu;
+
 public class PointTest {
     public static void main(String[] args) {
         Point A, B, C, O;

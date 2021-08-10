@@ -1,3 +1,5 @@
+package elsectu;
+
 public class TachTen {
     public static void main(String[] args) {
         String hoTen = MyUtil.scanner.nextLine();

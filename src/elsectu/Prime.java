@@ -1,3 +1,5 @@
+package elsectu;
+
 public class Prime {
     public static void main(String[] args) {
         int n = MyUtil.scanner.nextInt();

@@ -1,3 +1,5 @@
+package elsectu;
+
 import java.util.ArrayList;
 
 public class LineSegmentTest {

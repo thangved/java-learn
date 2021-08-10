@@ -1,3 +1,5 @@
+package elsectu;
+
 public class Cb2007210 {
     public static void main(String[] args) {
         testCase1();

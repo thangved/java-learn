@@ -1,3 +1,5 @@
+package elsectu;
+
 import java.util.Scanner;
 
 public class MyUtil {

@@ -1,3 +1,5 @@
+package elsectu;
+
 public class ColorPoint extends Point {
     private String color;
 

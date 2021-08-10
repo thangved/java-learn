@@ -1,3 +1,5 @@
+package elsectu;
+
 public class CLA {
     public static void main(String[] args) {
         double max = -1000,
