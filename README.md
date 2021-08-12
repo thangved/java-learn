@@ -1,15 +1,21 @@
 # java-learn
 
 ```java
-import baitap.date.Date;
+import cit.ctu.Diem;
 
 public class Main {
     public static void main(String[] args) {
-        Date date = new Date(29, 10, 2002);
+        Diem diem = new Diem(1, 2);
+        diem.hienThi();
         
-        date.nhap();
-        date.congNgay();
-        date.hienThi();
+        diem.doiDiem(1, 2);
+        diem.hienThi();
+        
+        diem.nhapDiem();
+        diem.hienThi();
+        
+        System.out.print("Khoảng cách đến O là: " + diem.khoangCach());
+        System.out.print("Khoảng cách đến (1, 1) là: " + diem.khoangCach(new Diem(1, 1)));
     }
 }
 ```
