@@ -3,11 +3,8 @@ package buoi3;
 import java.util.Scanner;
 
 public class Gach {
-    private String maSo,
-            mau;
-    private int soLuong,
-            chieuDai,
-            chieuNgang;
+    private String maSo, mau;
+    private int soLuong, chieuDai, chieuNgang;
     private long giaBan;
 
     public Gach() {
@@ -36,6 +33,7 @@ public class Gach {
         chieuDai = scanner.nextInt();
         chieuNgang = scanner.nextInt();
         giaBan = scanner.nextLong();
+        scanner.close();
     }
 
     public void in() {

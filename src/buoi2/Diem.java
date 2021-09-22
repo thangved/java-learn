@@ -26,6 +26,7 @@ public class Diem {
         x = scanner.nextInt();
         System.out.println("Nhap diem y:");
         y = scanner.nextInt();
+        scanner.close();
     }
 
     public void in() {

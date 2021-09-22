@@ -1,10 +1,10 @@
 package buoi4;
 
 import buoi2.Diem;
-
 import java.util.Scanner;
 
 public class DiemMau extends Diem {
+
     private String mau;
 
     public DiemMau() {

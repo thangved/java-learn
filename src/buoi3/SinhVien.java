@@ -2,8 +2,6 @@ package buoi3;
 
 import buoi2.Date;
 
-import java.awt.*;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class SinhVien {
@@ -89,8 +87,6 @@ public class SinhVien {
 
     @Override
     public String toString() {
-        return "MSSV: " + MSSV + "\n" +
-                "Ho ten: " + hoTen + "\n" +
-                "Ngay sinh: " + ngaySinh.toString() + "\n";
+        return "MSSV: " + MSSV + "\n" + "Ho ten: " + hoTen + "\n" + "Ngay sinh: " + ngaySinh.toString() + "\n";
     }
 }
