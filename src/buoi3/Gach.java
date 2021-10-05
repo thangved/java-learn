@@ -33,7 +33,6 @@ public class Gach {
         chieuDai = scanner.nextInt();
         chieuNgang = scanner.nextInt();
         giaBan = scanner.nextLong();
-        scanner.close();
     }
 
     public void in() {
