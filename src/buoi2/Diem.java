@@ -26,7 +26,6 @@ public class Diem {
         x = scanner.nextInt();
         System.out.println("Nhap diem y:");
         y = scanner.nextInt();
-        scanner.close();
     }
 
     public void in() {
@@ -52,6 +51,13 @@ public class Diem {
     }
 
     public float khoangCach() {
-        return khoangCach(new Diem());
+        return khoangCach(new Diem(0, 0));
+    }
+
+    @Override
+    public String toString() {
+        String string = "";
+        string += "(" + x + ", " + y + ")";
+        return string;
     }
 }

@@ -21,18 +21,20 @@ public class DoanThang {
     }
 
     public void nhap() {
+        System.out.println("Nhap diem dau cua doan thang.");
         d1.nhap();
+        System.out.println("Nhap diem cuoi cua doan thang.");
         d2.nhap();
     }
 
     public void in() {
-        d1.in();
-        d2.in();
+        System.out.println("Diem dau cua doan thang: " + d1.toString());
+        System.out.println("Diem cuoi cua doan thang: " + d2.toString());
     }
 
-    public void doi(Diem d1, Diem d2) {
-        d1.doiDiem(d1.giaTriX(), d1.giaTriY());
-        d2.doiDiem(d2.giaTriX(), d2.giaTriY());
+    public void doi(int dx, int dy) {
+        d1.doiDiem(dx, dy);
+        d2.doiDiem(dx, dy);
     }
 
     public float doDai() {
@@ -43,5 +45,13 @@ public class DoanThang {
         int dx = d1.giaTriX() - d2.giaTriX();
         int dy = d1.giaTriY() - d2.giaTriY();
         return Math.atan((double) dy / dx);
+    }
+
+    @Override
+    public String toString(){
+        String string = "";
+        string += "Diem dau: " + d1.toString() + ", ";
+        string += "Diem cuoi: " + d2.toString();
+        return string;
     }
 }

@@ -28,6 +28,12 @@ public class Date {
         ngay = scanner.nextInt();
         thang = scanner.nextInt();
         nam = scanner.nextInt();
-        scanner.close();
+    }
+
+    @Override
+    public String toString() {
+        String string = "";
+        string += ngay + "/" + thang + "/" + nam;
+        return string;
     }
 }

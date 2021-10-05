@@ -5,11 +5,12 @@ import buoi2.Date;
 import java.util.Scanner;
 
 public class SinhVien {
+    private final int hpToiDa = 100;
     private String MSSV;
     private String hoTen;
-    private Date ngaySinh;
+    private final Date ngaySinh;
     private int soLuongHocPhan;
-    private String[] hocPhan;
+    private String[] hocPhan = new String[hpToiDa];
     private String[] diem;
 
     public SinhVien() {
@@ -19,27 +20,39 @@ public class SinhVien {
         soLuongHocPhan = 0;
     }
 
-    public SinhVien(String MSSV, String hoTen, Date ngaySinh, int soLuongHocPhan, String[] hocPhan, String[] diem) {
+    public SinhVien(
+            String MSSV,
+            String hoTen,
+            Date ngaySinh,
+            int soLuongHocPhan,
+            String[] hocPhan,
+            String[] diem) {
+
         this.MSSV = MSSV;
         this.hoTen = hoTen;
         this.ngaySinh = new Date(ngaySinh);
+
         this.soLuongHocPhan = soLuongHocPhan;
+
         for (String hp : hocPhan) {
             assert false;
-            this.hocPhan[this.hocPhan.length] = new String(hp);
+            this.hocPhan[this.hocPhan.length] = hp;
         }
+
         for (String d : diem) {
             assert false;
-            this.diem[this.diem.length] = new String(d);
+            this.diem[this.diem.length] = d;
         }
     }
 
     public void nhap() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap ma so sinh vien");
         MSSV = scanner.nextLine();
+        System.out.println("Nhap ho ten sinh vien");
         hoTen = scanner.nextLine();
+        System.out.println("Nhap ngay, thang, nam sinh");
         ngaySinh.nhap();
-        scanner.close();
     }
 
     public void nhapDiem() {
@@ -48,18 +61,19 @@ public class SinhVien {
             System.out.println(hocPhan[i] + "\n");
             diem[i] = scanner.nextLine();
         }
-        scanner.close();
     }
 
     public float diemTrungBinh() {
+        if(soLuongHocPhan==0)
+            return 0;
         float diem = 0;
         for (String d : this.diem)
-            diem += doiDiem(d);
+            diem += diemSo(d);
 
         return diem / soLuongHocPhan;
     }
 
-    public float doiDiem(String diemChu) {
+    private float diemSo(String diemChu) {
         switch (diemChu) {
             case "A":
                 return 4f;
@@ -81,8 +95,29 @@ public class SinhVien {
     }
 
     public void dangKy(String tenHocPhan) {
-        hocPhan[soLuongHocPhan] = new String(tenHocPhan);
+        if (soLuongHocPhan == hpToiDa)
+            return;
+        hocPhan[soLuongHocPhan] = tenHocPhan;
         soLuongHocPhan++;
+    }
+
+    public void xoaHocPhan(String tenHocPhan) {
+        for (int i = 0; i < soLuongHocPhan; i++)
+            if (tenHocPhan.equals(hocPhan[i])) {
+                xoaTai(i);
+                i--;
+            }
+    }
+
+    public char layTen() {
+        String[] hoTen = this.hoTen.split(" ");
+        return hoTen[hoTen.length - 1].charAt(0);
+    }
+
+    private void xoaTai(int i) {
+        for (; i < soLuongHocPhan - 1; i++)
+            hocPhan[i] = hocPhan[i + 1];
+        soLuongHocPhan--;
     }
 
     @Override
