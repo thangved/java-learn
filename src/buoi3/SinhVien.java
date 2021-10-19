@@ -10,7 +10,7 @@ public class SinhVien {
     private String hoTen;
     private final Date ngaySinh;
     private int soLuongHocPhan;
-    private String[] hocPhan = new String[hpToiDa];
+    private String[] hocPhan;
     private String[] diem;
 
     public SinhVien() {
@@ -18,6 +18,8 @@ public class SinhVien {
         hoTen = "";
         ngaySinh = new Date();
         soLuongHocPhan = 0;
+        hocPhan = new String[hpToiDa];
+        diem = new String[hpToiDa];
     }
 
     public SinhVien(
@@ -34,6 +36,9 @@ public class SinhVien {
 
         this.soLuongHocPhan = soLuongHocPhan;
 
+        this.hocPhan = new String[hpToiDa];
+        this.diem = new String[hpToiDa];
+
         for (String hp : hocPhan) {
             assert false;
             this.hocPhan[this.hocPhan.length] = hp;
@@ -43,6 +48,8 @@ public class SinhVien {
             assert false;
             this.diem[this.diem.length] = d;
         }
+
+        soLuongHocPhan = hocPhan.length;
     }
 
     public void nhap() {
@@ -64,7 +71,7 @@ public class SinhVien {
     }
 
     public float diemTrungBinh() {
-        if(soLuongHocPhan==0)
+        if (soLuongHocPhan == 0)
             return 0;
         float diem = 0;
         for (String d : this.diem)
@@ -97,6 +104,7 @@ public class SinhVien {
     public void dangKy(String tenHocPhan) {
         if (soLuongHocPhan == hpToiDa)
             return;
+
         hocPhan[soLuongHocPhan] = tenHocPhan;
         soLuongHocPhan++;
     }
@@ -117,6 +125,7 @@ public class SinhVien {
     private void xoaTai(int i) {
         for (; i < soLuongHocPhan - 1; i++)
             hocPhan[i] = hocPhan[i + 1];
+
         soLuongHocPhan--;
     }
 

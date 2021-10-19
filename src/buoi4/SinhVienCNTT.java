@@ -2,64 +2,61 @@ package buoi4;
 
 import buoi2.Date;
 import buoi3.SinhVien;
+
 import java.util.Scanner;
 
+
 public class SinhVienCNTT extends SinhVien {
+    private String taikhoan;
+    private String matkhau;
+    private String email;
 
-	private String taiKhoan;
-	private String matkhau;
-	private String email;
+    public SinhVienCNTT() {
+        super();
+        taikhoan = "B0000000";
+        matkhau = "########";
+        email = "example@domain.com";
+    }
 
-	public SinhVienCNTT() {
-		super();
-		taiKhoan = "";
-		setMatkhau("");
-		email = "";
-	}
+    public SinhVienCNTT(
+            String mssv,
+            String hoten,
+            Date ngaysinh,
+            String taikhoan,
+            String matkhau,
+            String email,
+            int soluonghocphan,
+            String[] hocphan,
+            String[] diem) {
+        super(mssv, hoten, ngaysinh, soluonghocphan, hocphan, diem);
+        this.taikhoan = taikhoan;
+        this.matkhau = matkhau;
+        this.email = email;
+    }
 
-	public String getMatkhau() {
-		return matkhau;
-	}
+    public void doiMatKhau(String matkhaumoi) {
+        matkhau = matkhaumoi;
+    }
 
-	public void setMatkhau(String matkhau) {
-		this.matkhau = matkhau;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public SinhVienCNTT(String MSSV, String hoTen, Date ngaySinh, String taiKhoan, String matkhau, String email,
-			int soLuongHocPhan, String[] hocPhan, String[] diem) {
-		super(MSSV, hoTen, ngaySinh, soLuongHocPhan, hocPhan, diem);
-		this.taiKhoan = taiKhoan;
-		this.setMatkhau(matkhau);
-		this.email = email;
-	}
+    @Override
+    public String toString() {
+        String string = super.toString();
+        string += String.format("Tài khoản: %s\n", taikhoan);
+        string += String.format("Email: %s\n", email);
+        return string;
+    }
 
-	@Override
-	public void nhap() {
-		Scanner scanner = new Scanner(System.in);
-		super.nhap();
-		taiKhoan = scanner.nextLine();
-		setMatkhau(scanner.nextLine());
-		email = scanner.nextLine();
-		scanner.close();
-	}
-
-	public String toString() {
-		return (super.toString() + "Tai khoan: " + taiKhoan + "\n" + "Email: " + email + "\n");
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public void setTaiKhoan(String taiKhoan) {
-		this.taiKhoan = taiKhoan;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getTaiKhoan() {
-		return taiKhoan;
-	}
+    @Override
+    public void nhap() {
+        super.nhap();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập tài khoản elcit");
+        taikhoan = scanner.nextLine();
+        System.out.println("Nhập địa chỉ email");
+        email = scanner.nextLine();
+    }
 }

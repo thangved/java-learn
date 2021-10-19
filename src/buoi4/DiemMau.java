@@ -1,36 +1,37 @@
 package buoi4;
 
 import buoi2.Diem;
+
 import java.util.Scanner;
 
 public class DiemMau extends Diem {
-
     private String mau;
 
     public DiemMau() {
         super();
-        mau = "";
+        mau = "Trắng";
     }
 
     public DiemMau(int x, int y, String mau) {
         super(x, y);
-        this.mau = new String(mau);
+        this.mau = mau;
     }
 
-    public void ganMau(String mau) {
-        this.mau = new String(mau);
+    public void GanMau(String mau) {
+        this.mau = mau;
     }
 
     @Override
     public void nhap() {
-        Scanner scanner = new Scanner(System.in);
         super.nhap();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập màu");
         mau = scanner.nextLine();
-        scanner.close();
     }
 
+    @Override
     public void in() {
         super.in();
-        System.out.println(mau);
+        System.out.format("Màu: %s\n", mau);
     }
 }

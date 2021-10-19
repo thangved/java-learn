@@ -22,14 +22,14 @@ public class Diem {
 
     public void nhap() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhap diem x:");
+        System.out.println("Nhập điểm x:");
         x = scanner.nextInt();
-        System.out.println("Nhap diem y:");
+        System.out.println("Nhập điểm y:");
         y = scanner.nextInt();
     }
 
     public void in() {
-        System.out.println("Toa do diem la:");
+        System.out.println("Tọa độ điểm là:");
         System.out.format("(%d, %d)\n", x, y);
     }
 

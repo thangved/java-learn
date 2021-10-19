@@ -11,7 +11,8 @@ public class SDSinhVien {
         System.out.println(a.toString());
 
         Scanner scanner = new Scanner(System.in);
-        ArrayList<SinhVien> DSSinhVien = new ArrayList<SinhVien>();
+        ArrayList<SinhVien> DSSinhVien = new ArrayList<>();
+
         System.out.println("Nhap so luong sinh vien");
         int n = scanner.nextInt();
 
@@ -29,6 +30,7 @@ public class SDSinhVien {
 
         sapXep(DSSinhVien);
         System.out.println("Danh sach sinh vien sau khi sap xep:");
+
         DSSinhVien.forEach(sinhVien -> {
             System.out.println(sinhVien.toString());
         });
@@ -47,18 +49,20 @@ public class SDSinhVien {
 
     public static void canhBaoHocVu(ArrayList<SinhVien> DSSinhVien) {
         System.out.println("Danh sach sinh vien bi canh bao hoc vu:");
-        DSSinhVien.forEach(sinhVien -> {
-            if (sinhVien.diemTrungBinh() < 1)
-                System.out.println(sinhVien.toString() + "Diem Trung binh: " + sinhVien.diemTrungBinh());
-        });
+        DSSinhVien.forEach(SDSinhVien::callBack);
+    }
+
+    public static void callBack(SinhVien sinhVien) {
+        if (sinhVien.diemTrungBinh() < 1)
+            System.out.println(sinhVien.toString() + "Diem trung binh: " + sinhVien.diemTrungBinh() + "\n");
     }
 
     public static SinhVien diemCaoNhat(ArrayList<SinhVien> DSSinhVien) {
         SinhVien max = new SinhVien();
 
-        for (int i = 0; i < DSSinhVien.size(); i++)
-            if (DSSinhVien.get(i).diemTrungBinh() >= max.diemTrungBinh())
-                max = DSSinhVien.get(i);
+        for (SinhVien sinhVien : DSSinhVien)
+            if (sinhVien.diemTrungBinh() >= max.diemTrungBinh())
+                max = sinhVien;
 
         return max;
     }
